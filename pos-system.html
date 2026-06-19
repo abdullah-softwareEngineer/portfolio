@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS System | Project Case Study</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { padding-top: 100px; }
+        .project-detail-container { max-width: 1100px; margin: 2rem auto; }
+        .main-img-container img { width: 100%; border-radius: 15px; border: 1px solid var(--glass-border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .thumbnail-gallery { display: flex; gap: 15px; margin-top: 20px; justify-content: center; flex-wrap: wrap; }
+        .thumbnail-gallery img { width: 120px; height: 80px; object-fit: cover; cursor: pointer; border-radius: 8px; border: 2px solid transparent; opacity: 0.6; transition: all 0.3s; }
+        .thumbnail-gallery img:hover, .thumbnail-gallery img.active { opacity: 1; border-color: var(--accent-primary); transform: translateY(-5px); }
+        .project-description { margin-top: 40px; }
+        .project-description h1 { background: linear-gradient(to right, var(--accent-primary), var(--purple-glow)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 15px; font-size: 2.5rem; }
+        .tech-stack span { background: rgba(0, 242, 254, 0.1); border: 1px solid var(--accent-primary); color: var(--accent-primary); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; margin-right: 10px; display: inline-block; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="project-detail-container glass-card">
+        <div class="main-img-container">
+            <img id="mainDisplay" src="images/projects/1 (7).png" alt="POS System Main">
+        </div>
+
+        <div class="thumbnail-gallery">
+            <img src="images/projects/1 (7).png" onclick="changeImage(this.src)" class="active">
+            <img src="images/projects/1 (8).png" onclick="changeImage(this.src)">
+            <img src="images/projects/1 (9).png" onclick="changeImage(this.src)">
+        </div>
+
+        <div class="project-description">
+            <h1>Point of Sale (POS) System</h1>
+            <div class="tech-stack">
+                <span>Java</span> <span>OOP Principles</span> <span>Swing GUI</span> <span>JDBC</span> <span>MySQL Workbench</span>
+            </div>
+            <p style="color: var(--text-muted); line-height: 1.8; margin-top: 15px;">A comprehensive desktop application built to streamline sales and inventory operations. This system is developed using strict Object-Oriented Programming (OOP) concepts in Java. It features a custom desktop user interface via Swing components and maintains an efficient real-time relational layout using standard standalone MySQL Workbench via JDBC driver connectivity.</p>
+            <a href="index.html#portfolio" class="btn-primary" style="margin-top: 30px;">&larr; Back to Portfolio</a>
+        </div>
+    </div>
+
+    <script>
+        function changeImage(imageSrc) {
+            document.getElementById('mainDisplay').src = imageSrc;
+            let thumbnails = document.querySelectorAll('.thumbnail-gallery img');
+            thumbnails.forEach(img => img.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
